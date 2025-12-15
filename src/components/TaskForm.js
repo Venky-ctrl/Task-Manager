@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getTasks, saveTasks } from "../utils/storage";
 import { v4 as uuidv4 } from "uuid";
 
-const TaskForm = ({users, refreshTasks}) => {
+const TaskForm = ({ users, refreshTasks }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [assigneeId, setAssigneeId] = useState("");
@@ -16,7 +16,7 @@ const TaskForm = ({users, refreshTasks}) => {
       id: uuidv4(),
       title,
       description,
-      assigneeId,
+      assigneeId: Number(assigneeId),
       status: "Pending",
     };
 
